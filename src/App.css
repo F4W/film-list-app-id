@@ -1,65 +1,31 @@
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-image: url("https://batamtoday.com/media/news/ilustrasi-bioskop-kosong1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100%;
-  color: white;
-}
-h1 {
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .Movie-container {
-  width: 100%;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  justify-content: space-around;
 }
 
 .Movie-wrapper {
-  width: 500px;
-  background-color: antiquewhite;
-  color: black;
-}
-
-.Movie-search {
-  height:48px;
-  font-size: 24px;
-  margin-bottom: 32px;
-  padding: 16px;
-  font-weight: bold;
-  width: 475px;
+  margin: 20px;
+  text-align: center;
 }
 
 .Movie-title {
-  height: 60px;
-  margin-top: 26px;
+  font-size: 18px;
   font-weight: bold;
 }
 
-.Movie-date {
-  font-style: inherit;
-  color: #565758;
-  margin-top: 24px;
-  text-decoration: solid;
-}
-
+.Movie-date,
 .Movie-rate {
-  color: red;
-  margin-bottom: 24px;
-  font-weight: bold;
-  font-size: 1.3em;
-  text-decoration: underline;
+  margin: 5px 0;
+}
+
+.Movie-search {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
 }
