@@ -1,70 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Mate:ital@0;1&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Mate:ital@0;1&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Mate:wght@400;700&display=swap');
 
 body {
+  background-color: #f0f0f0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  font-family: 'Mate', serif;
 }
 
 .dark-mode {
   background-color: #121212;
-  color: #ffffff;
-}
-
-.Movie-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  
-}
-
-.Movie-wrapper {
-  margin: 20px;
-  text-align: center;
-  
+  color: white;
 }
 
 .title {
-  font-size: 18px;
-  font-weight: bold;
+  font-family: 'Luckiest Guy', cursive;
   text-align: center;
-  font-family: "Luckiest Guy", cursive;
-
-}
-
-.Movie-title {
-  font-size: 18px;
-  font-weight: bold;
-  font-family: "Mate", serif;
-}
-
-.Movie-date,
-.Movie-rate {
-  margin: 5px 0;
-  font-family: "Mate", serif;
-}
-
-.Movie-search {
   width: 100%;
-  padding: 10px;
-  font-size: 18px;
 }
 
-.MuiPaper-root {
-  background-color: inherit !important;
-  color: inherit !important;
+.MuiInputBase-input {
+  color: inherit;
 }
 
-.MuiTypography-root {
-  color: inherit !important;
+.MuiOutlinedInput-root {
+  fieldset {
+    border-color: inherit;
+  }
+  &:hover fieldset {
+    border-color: inherit;
+  }
+  &.Mui-focused fieldset {
+    border-color: inherit;
+  }
 }
 
-.MuiDialogTitle-root {
-  color: inherit !important;
+::placeholder {
+  color: inherit;
+  opacity: 0.5;
 }
 
-.MuiButtonBase-root {
-  color: inherit !important;
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  right: 20px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+  }
+  .dark-mode-toggle {
+    position: static;
+    margin-top: 10px;
+  }
 }

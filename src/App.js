@@ -49,10 +49,10 @@ const App = () => {
                 image={`${ImgUrl}/${movie.poster_path}`}
                 style={{ objectFit: 'cover' }}
               />
-              <CardContent>
-                <Typography variant="h6">{movie.title}</Typography>
-                <Typography variant="body2">Release Date: {movie.release_date}</Typography>
-                <Typography variant="body2">Rating: {movie.vote_average}</Typography>
+              <CardContent style={{ backgroundColor: darkMode ? 'rgba(0, 0, 0, 0.6)' : 'white', color: darkMode ? 'white' : 'black' }}>
+                <Typography variant="h6" style={{ fontFamily: 'Mate, serif' }}>{movie.title}</Typography>
+                <Typography variant="body2" style={{ fontFamily: 'Mate, serif' }}>Release Date: {movie.release_date}</Typography>
+                <Typography variant="body2" style={{ fontFamily: 'Mate, serif' }}>Rating: {movie.vote_average}</Typography>
               </CardContent>
             </Card>
           </Grid>
@@ -67,11 +67,11 @@ const App = () => {
 
   return (
     <Container className={darkMode ? 'dark-mode' : ''}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-        <Typography variant="h2" className="title" gutterBottom>
+      <div className="header">
+        <Typography variant="h2" className="title" gutterBottom style={{ fontFamily: 'Luckiest Guy, cursive', textAlign: 'center' }}>
           Film List App
         </Typography>
-        <IconButton onClick={toggleDarkMode} color="inherit">
+        <IconButton onClick={toggleDarkMode} color="inherit" className="dark-mode-toggle">
           {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
       </div>
@@ -86,7 +86,11 @@ const App = () => {
             <InputAdornment position="end">
               <SearchIcon />
             </InputAdornment>
-          )
+          ),
+          style: { color: darkMode ? 'white' : 'inherit' },
+        }}
+        InputLabelProps={{
+          style: { color: darkMode ? 'white' : 'inherit' },
         }}
       />
       <div style={{ marginTop: '20px' }}>
