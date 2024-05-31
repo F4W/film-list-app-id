@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getMovieList, searchMovie, getMovieDetails } from './api';
 import './App.css';
-import { Container, Typography, TextField, Grid, Card, CardMedia, CardContent, Dialog, DialogTitle, DialogContent } from '@mui/material';
+import { Container, Typography, TextField, Grid, Card, CardMedia, CardContent, Dialog, DialogTitle, DialogContent, IconButton, InputAdornment } from '@mui/material';
+import { Search as SearchIcon, Brightness4 as DarkModeIcon, Brightness7 as LightModeIcon } from '@mui/icons-material';
 import YouTube from 'react-youtube';
 
 const App = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [darkMode, setDarkMode] = useState(false);
 
   const ImgUrl = "https://image.tmdb.org/t/p/w500";
 
@@ -59,17 +61,33 @@ const App = () => {
     );
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <Container>
-      <Typography variant="h2" gutterBottom>
-        Film List App
-      </Typography>
+    <Container className={darkMode ? 'dark-mode' : ''}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <Typography variant="h2" className="title" gutterBottom>
+          Film List App
+        </Typography>
+        <IconButton onClick={toggleDarkMode} color="inherit">
+          {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
+        </IconButton>
+      </div>
       <TextField
         fullWidth
         variant="outlined"
         placeholder="Cari Film Favorit mu :)....."
         onChange={({ target }) => search(target.value)}
         value={searchQuery}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <SearchIcon />
+            </InputAdornment>
+          )
+        }}
       />
       <div style={{ marginTop: '20px' }}>
         <PopularMovieList />

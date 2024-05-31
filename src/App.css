@@ -1,31 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Mate:ital@0;1&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Mate:ital@0;1&display=swap');
+
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
 }
 
 .Movie-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  
 }
 
 .Movie-wrapper {
   margin: 20px;
   text-align: center;
+  
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Luckiest Guy", cursive;
+
 }
 
 .Movie-title {
   font-size: 18px;
   font-weight: bold;
+  font-family: "Mate", serif;
 }
 
 .Movie-date,
 .Movie-rate {
   margin: 5px 0;
+  font-family: "Mate", serif;
 }
 
 .Movie-search {
   width: 100%;
   padding: 10px;
   font-size: 18px;
+}
+
+.MuiPaper-root {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+.MuiTypography-root {
+  color: inherit !important;
+}
+
+.MuiDialogTitle-root {
+  color: inherit !important;
+}
+
+.MuiButtonBase-root {
+  color: inherit !important;
 }
